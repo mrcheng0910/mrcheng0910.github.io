@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的第一篇博客 | AnaniCheng Blog</title>
+  <title>域名解析模块tld和tldextract分析 | AnaniCheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这是自己创建博客后，写的第一篇博客。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;其实自己一直想拥有自己的博客，用过博客园、csdn等等一些，但是每次都是用一段时间就不在用了，闲置好多年，但是每天记录一些东西是必须的，等过段时间，回头看看，知道自己的进步以及成长，所以使用github和hexo，搭建出自己的博客，感谢大牛们给的机会。&amp;nbsp;&amp;n">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://AnaniCheng.github.io/2015/07/10/我的第一篇博客/index.html">
+<meta property="og:title" content="域名解析模块tld和tldextract分析">
+<meta property="og:url" content="http://AnaniCheng.github.io/2015/07/11/域名解析模块tld和tldextract分析/index.html">
 <meta property="og:site_name" content="AnaniCheng Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这是自己创建博客后，写的第一篇博客。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;其实自己一直想拥有自己的博客，用过博客园、csdn等等一些，但是每次都是用一段时间就不在用了，闲置好多年，但是每天记录一些东西是必须的，等过段时间，回头看看，知道自己的进步以及成长，所以使用github和hexo，搭建出自己的博客，感谢大牛们给的机会。&amp;nbsp;&amp;n">
-<meta property="og:updated_time" content="2015-07-10T09:07:26.874Z">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+<meta property="og:updated_time" content="2015-07-11T09:30:13.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这是自己创建博客后，写的第一篇博客。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;其实自己一直想拥有自己的博客，用过博客园、csdn等等一些，但是每次都是用一段时间就不在用了，闲置好多年，但是每天记录一些东西是必须的，等过段时间，回头看看，知道自己的进步以及成长，所以使用github和hexo，搭建出自己的博客，感谢大牛们给的机会。&amp;nbsp;&amp;n">
+<meta name="twitter:title" content="域名解析模块tld和tldextract分析">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
   
     <link rel="alternative" href="/atom.xml" title="AnaniCheng Blog" type="application/atom+xml">
   
@@ -189,11 +189,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-域名解析模块tld和tldextract分析" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/10/我的第一篇博客/" class="article-date">
-  	<time datetime="2015-07-10T08:54:05.000Z" itemprop="datePublished">2015-07-10</time>
+      <a href="/2015/07/11/域名解析模块tld和tldextract分析/" class="article-date">
+  	<time datetime="2015-07-11T09:04:50.000Z" itemprop="datePublished">2015-07-11</time>
 </a>
     </div>
   
@@ -206,7 +206,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      域名解析模块tld和tldextract分析
     </h1>
   
 
@@ -215,7 +215,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感触/">感触</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tld/">tld</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tldextract/">tldextract</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名解析/">域名解析</a></li></ul>
 	</div>
 
         
@@ -226,7 +226,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;这是自己创建博客后，写的第一篇博客。<br>&nbsp;&nbsp;&nbsp;&nbsp;其实自己一直想拥有自己的博客，用过博客园、csdn等等一些，但是每次都是用一段时间就不在用了，闲置好多年，但是每天记录一些东西是必须的，等过段时间，回头看看，知道自己的进步以及成长，所以使用github和hexo，搭建出自己的博客，感谢大牛们给的机会。<br>&nbsp;&nbsp;&nbsp;&nbsp;每天记录，无论生活中、还是工作中遇到的事情，开心的不开心，成功的喜悦还是失败的沮丧，坚持不懈、永不言弃。  </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库<code>tld</code>和<code>tldextract</code>,python也有标准解析库<code>urlparse</code>,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。<br><a id="more"></a></p>
+<h2 id="tld模块链接">tld模块<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
+<pre><code>from tld import get_tld  
+<span class="keyword">res</span> = get_tld(<span class="string">"http://www.baidu.com/,as_object=True)
+</span><span class="keyword">print</span> <span class="keyword">res</span>            # www.baidu.<span class="keyword">com</span>
+<span class="keyword">print</span> <span class="keyword">res</span>.subdomain  # www
+<span class="keyword">print</span> <span class="keyword">res</span>.domain     # baidu
+<span class="keyword">print</span> <span class="keyword">res</span>.fuffix     # <span class="keyword">com</span>
+<span class="keyword">print</span> <span class="keyword">res</span>.tld        # baidu.<span class="keyword">com</span>
+</code></pre><h2 id="tldextract模块链接">tldextract模块<a href="https://pypi.python.org/pypi/tldextract/" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
+<pre><code>import tldextract
+ext = tldextract.<span class="function"><span class="title">extract</span><span class="params">(<span class="string">'http://forums.bbc.co.uk'</span>)</span></span>
+print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</span>,ext.suffix
+</code></pre><p><strong>注意:</strong>，如果直接使用<code>tldextract.extract</code>,则程序运行第一次的时候，库会更新域名后缀列表，根据网络情况会很慢，可以取消更新，直接使用提取功能，详见<a href="https://github.com/john-kurkowski/tldextract#note-about-caching--advanced-usage" target="_blank" rel="external">网址</a>,英语较差的同学直接测试代码即可。</p>
+<h2 id="tld和tldextract比较">tld和tldextract比较</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;强烈建议使用tldextract，因为根据IANA机构发布最新消息，顶级域名后缀已经达到<strong>1000</strong>多个，域名的开放，使更多的后缀在更新中，而<code>tld</code>从前几年开始就已经不在更新，其后缀域名库已经远远达不到要求，因为项目需要，自己一直修改其标准库，每次都要更新，特别项目部署的时候，更是麻烦。<br>&nbsp;&nbsp;&nbsp;&nbsp;同时，<code>tldextract</code>实时更新，目前自己遇到的后缀基本都有，若没有只是稍微更新即可，所以强烈建议使用<code>tldextract</code>。</p>
 
       
     </div>
@@ -236,15 +250,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/10/MarkDown语法记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          MarkDown语法记录
-        
-      </div>
-    </a>
   
+    <a href="/2015/07/10/MarkDown语法记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MarkDown语法记录</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -271,7 +281,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="我的第一篇博客" data-title="我的第一篇博客" data-url="http://AnaniCheng.github.io/2015/07/10/我的第一篇博客/"></div>
+	<div class="ds-thread" data-thread-key="域名解析模块tld和tldextract分析" data-title="域名解析模块tld和tldextract分析" data-url="http://AnaniCheng.github.io/2015/07/11/域名解析模块tld和tldextract分析/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
