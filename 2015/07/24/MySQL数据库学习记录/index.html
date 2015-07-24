@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MySQL数据库学习记录 | AnaniCheng Blog</title>
+  <title>MySQL数据库学习记录--DDL语句 | AnaniCheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="xuexileifeng">
+  <meta name="description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。  
+1. 登录语法:mysql -uroot -p,然后输入正确的密码，即可进入到">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库学习记录">
+<meta property="og:title" content="MySQL数据库学习记录--DDL语句">
 <meta property="og:url" content="http://AnaniCheng.github.io/2015/07/24/MySQL数据库学习记录/index.html">
 <meta property="og:site_name" content="AnaniCheng Blog">
-<meta property="og:description" content="xuexileifeng">
-<meta property="og:updated_time" content="2015-07-24T00:41:44.358Z">
+<meta property="og:description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。  
+1. 登录语法:mysql -uroot -p,然后输入正确的密码，即可进入到">
+<meta property="og:updated_time" content="2015-07-24T06:09:56.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库学习记录">
-<meta name="twitter:description" content="xuexileifeng">
+<meta name="twitter:title" content="MySQL数据库学习记录--DDL语句">
+<meta name="twitter:description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。  
+1. 登录语法:mysql -uroot -p,然后输入正确的密码，即可进入到">
   
     <link rel="alternative" href="/atom.xml" title="AnaniCheng Blog" type="application/atom+xml">
   
@@ -115,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 10px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -206,7 +209,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL数据库学习记录
+      MySQL数据库学习记录--DDL语句
     </h1>
   
 
@@ -214,6 +217,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ddl/">ddl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql命令/">mysql命令</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -222,7 +229,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>xuexileifeng</p>
+        <p>从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了<strong>《深入浅出mysql数据库开发、优化与管理维护 第二版》</strong>，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。  </p>
+<h3 id="1-_登录">1. 登录</h3><p>语法:<code>mysql -uroot -p</code>,然后输入正确的密码，即可进入到数据库中，<code>-u</code>后面是连接数据库的用户名，默认是<code>root</code>，另外命令的结束符，用<code>;</code>或者<code>\g</code>结束。  </p>
+<h3 id="2-_创建数据库">2. 创建数据库</h3><p>语法：<code>create database dbname</code>，dbname为创建的数据库的名称。<br><a id="more"></a></p>
+<h3 id="3-_查看系统中已存在的数据库">3. 查看系统中已存在的数据库</h3><p>语法:<code>show databases</code>，就会列出所有系统中所有的数据库。</p>
+<h3 id="4-_选择操作的数据库">4. 选择操作的数据库</h3><p>语法:<code>use dbname</code>，dbname为想要操作的数据库名称。 </p>
+<h3 id="5-_查看某数据库中包含的所有表">5. 查看某数据库中包含的所有表</h3><p>语法:<code>show tables</code>，会显示出该数据库中所有的表，该命令操作必须是在确定的数据库中才可以。</p>
+<h3 id="6-_删除数据库">6. 删除数据库</h3><p>语法：<code>drop database dbname</code>，dbname为要删除的数据库名称</p>
+<h3 id="7-_创建表">7. 创建表</h3><p>语法：  </p>
+<pre><code><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> tablename(
+col_name1 col_type1 <span class="keyword">constraints</span>,
+col_name1 col_type1 <span class="keyword">constraints</span>)</span>
+</code></pre><p>col_name为列的名字，col_type为数据类型，constraints为这个列的约束条件。</p>
+<h3 id="8-_查看表的定义">8. 查看表的定义</h3><p>语法：<code>desc tablename</code>,tablename即为所要查看的表的名称。<br>但是上述显示的信息还不够全面，可以使用以下命令来查看表的更多定义信息。<br>命令：<code>show create table tbname \g</code>,其中tbname为表名称，\g是用来使得记录能够按照字段竖向排列，以便更好显示内容较长的记录。这个命令可以显示出表的engine(存储引擎)和charset(字符集)等信息。</p>
+<h3 id="9-_删除表">9. 删除表</h3><p>语法：<code>drop table tbname</code>，tbname为要删除的表的名称</p>
+<h3 id="10-_修改表">10. 修改表</h3><p><strong>备注：</strong><code>first|after column_name</code>是修改字段在表中的位置。  </p>
+<ul>
+<li><p>修改表的类型<br>语法：<code>alter table tablename modify[column] column_definition[first|after clo_name]</code></p>
+</li>
+<li><p>增加表字段<br>语法：<code>alter table tablename add[column] column_definition[first|after col_name]</code></p>
+</li>
+<li><p>删除表字段<br>语法：<code>alter table tablename drop[column] col_name</code></p>
+</li>
+<li><p>字段改名<br>语法：<code>alter table tablename change[column] old_col_name column_definiton [first|after col_name]</code><br>例如：<code>alter table tbname change age age1 int(4)</code>,该例子就是将字段age名称改为age1，且字段类型改为int(4)  </p>
+</li>
+<li>修改字段排序顺序<br>前面介绍的字段增加和修改方法中，都有一个可选项first|after column_name，修改字段在表中位置。</li>
+<li>更改表名<br>语法：<code>alter table tablename rename [to] new_tablename</code></li>
+</ul>
 
       
     </div>
@@ -263,7 +296,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="MySQL数据库学习记录" data-title="MySQL数据库学习记录" data-url="http://AnaniCheng.github.io/2015/07/24/MySQL数据库学习记录/"></div>
+	<div class="ds-thread" data-thread-key="MySQL数据库学习记录" data-title="MySQL数据库学习记录--DDL语句" data-url="http://AnaniCheng.github.io/2015/07/24/MySQL数据库学习记录/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
