@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 10px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 20px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -190,6 +190,65 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-MySQL数据库学习记录-DML语句" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/24/MySQL数据库学习记录-DML语句/" class="article-date">
+  	<time datetime="2015-07-24T06:14:31.000Z" itemprop="datePublished">2015-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/24/MySQL数据库学习记录-DML语句/">MySQL数据库学习记录--DML语句</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DML操作是对数据库中表记录进行操作，主要包括表记录的插入、更新、删除和查询，是平常使用最多的操作。</p>
+<h3 id="1-_插入记录">1. 插入记录</h3><p>表建好后，就可以插入记录<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dml/">dml</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql命令/">mysql命令</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/07/24/MySQL数据库学习记录-DML语句/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-MySQL数据库学习记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -216,9 +275,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了<strong>《深入浅出mysql数据库开发、优化与管理维护 第二版》</strong>，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。  </p>
-<h3 id="1-_登录">1. 登录</h3><p>语法:<code>mysql -uroot -p</code>,然后输入正确的密码，即可进入到数据库中，<code>-u</code>后面是连接数据库的用户名，默认是<code>root</code>，另外命令的结束符，用<code>;</code>或者<code>\g</code>结束。  </p>
-<h3 id="2-_创建数据库">2. 创建数据库</h3><p>语法：<code>create database dbname</code>，dbname为创建的数据库的名称。<br>
+        <p>从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了<strong>《深入浅出mysql数据库开发、优化与管理维护 第二版》</strong>，<a href="http://download.csdn.net/detail/for_cyn777/8570287#comment">电子书下载链接</a>，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。<br>
       
     </div>
     

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL数据库学习记录--DML语句 | AnaniCheng Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DML操作是对数据库中表记录进行操作，主要包括表记录的插入、更新、删除和查询，是平常使用最多的操作。
+1. 插入记录表建好后，就可以插入记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL数据库学习记录--DML语句">
+<meta property="og:url" content="http://AnaniCheng.github.io/2015/07/24/MySQL数据库学习记录-DML语句/index.html">
+<meta property="og:site_name" content="AnaniCheng Blog">
+<meta property="og:description" content="DML操作是对数据库中表记录进行操作，主要包括表记录的插入、更新、删除和查询，是平常使用最多的操作。
+1. 插入记录表建好后，就可以插入记录">
+<meta property="og:updated_time" content="2015-07-25T00:26:15.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL数据库学习记录--DML语句">
+<meta name="twitter:description" content="DML操作是对数据库中表记录进行操作，主要包括表记录的插入、更新、删除和查询，是平常使用最多的操作。
+1. 插入记录表建好后，就可以插入记录">
+  
+    <link rel="alternative" href="/atom.xml" title="AnaniCheng Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xk5in.com1.z0.glb.clouddn.com/53a2977256e8a087.jpg!200x200.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xk5in.com1.z0.glb.clouddn.com/53a2977256e8a087.jpg!200x200.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Mr.Cheng</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">记录生活点点滴滴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/AnaniCheng" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yanan-cheng-61" title="zhihu">zhihu</a>
+					        
+								<a class="linkedin" target="_blank" href="/#" title="linkedin">linkedin</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 20px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.hitwh.edu.cn/">HITWH</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/">博客园</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://toutiao.io/">开发者头条</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">学业不精，喜欢各种装x的技术，主要学习方向为域名、DNS服务器，使用语言包括Python和Golang</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Mr.Cheng</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xk5in.com1.z0.glb.clouddn.com/53a2977256e8a087.jpg!200x200.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Mr.Cheng</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">记录生活点点滴滴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/AnaniCheng" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yanan-cheng-61" title="zhihu">zhihu</a>
+			        
+						<a class="linkedin" target="_blank" href="/#" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-MySQL数据库学习记录-DML语句" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/24/MySQL数据库学习记录-DML语句/" class="article-date">
+  	<time datetime="2015-07-24T06:14:31.000Z" itemprop="datePublished">2015-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL数据库学习记录--DML语句
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dml/">dml</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql命令/">mysql命令</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DML操作是对数据库中表记录进行操作，主要包括表记录的插入、更新、删除和查询，是平常使用最多的操作。</p>
+<h3 id="1-_插入记录">1. 插入记录</h3><p>表建好后，就可以插入记录<br><a id="more"></a><br>语法：<code>insert into tablename (field1,field2,...) values(value1,value2,...)</code>,也可以不用指定字段，但是顺序应该和字段排序的顺序一致。<strong>注意:</strong>含可空字段、非空但是有默认值的字段、自增字段，可以不用在insert后的字段列表里出现。另外，insert可以一次性插入多条记录，格式如下：  </p>
+<pre><code><span class="label">insert</span> into tablename(<span class="literal">f1</span>,<span class="literal">f2</span>,...) values
+(<span class="literal">r1</span>,<span class="literal">r2</span>,...),
+(<span class="literal">r1</span>,<span class="literal">r2</span>,..),
+<span class="label">...</span><span class="comment">;</span>
+</code></pre><h3 id="2-_更新记录">2. 更新记录</h3><p>表里记录可以使用update命令进行更改，语法如下：</p>
+<pre><code>update tablename <span class="built_in">set</span> field1<span class="subst">=</span>value1,filed2<span class="subst">=</span>value2,<span class="attribute">...</span> <span class="preprocessor">[</span><span class="keyword">where</span> condition<span class="preprocessor">]</span><span class="markup"></span>
+</code></pre><p>在mysql中，update可以同时更新多个表中的数据，语法如下：</p>
+<pre><code><span class="keyword">update</span> t1,t2,..<span class="keyword">tn</span> <span class="keyword">set</span> t1.field1=expr1,<span class="keyword">tn</span>.fieldn=exprn [where condition]
+</code></pre><p><strong>注意:</strong> 多表更新的语法更多用在根据一张表的字段，来动态更新另一张表的字段。</p>
+<h3 id="3-_删除记录">3. 删除记录</h3><p>语法：</p>
+<pre><code><span class="keyword">delete</span> <span class="keyword">from</span> tablename [<span class="built_in">where</span> condition]  <span class="comment">//删除一张表中内容</span>
+<span class="keyword">delete</span> <span class="keyword">from</span> t1,t2,...,tn [<span class="built_in">where</span> conditon]  <span class="comment">//同时删除多个表</span>
+</code></pre><p><strong>注意：</strong> 不加where条件时，会删除所有数据，一定小心。</p>
+<h3 id="4-_查询记录">4. 查询记录</h3><p>基本语法：</p>
+<pre><code><span class="keyword">select</span> * <span class="keyword">from</span> tablename [<span class="keyword">where</span> conditon]
+</code></pre><ul>
+<li>查询不重复记录<br>有时候需要将表中记录去掉重复显示出来，可以使用distinct关键字来实现  </li>
+</ul>
+<pre><code>select <span class="keyword">distinct</span> field1 <span class="keyword">from</span> tablename
+</code></pre><ul>
+<li>条件查询<br>即添加where条件进行判断，语法如下：</li>
+</ul>
+<pre><code><span class="operator"><span class="keyword">select</span> filed <span class="keyword">from</span> tablename <span class="keyword">where</span> filed = <span class="keyword">values</span></span>
+</code></pre><ul>
+<li>排序和限制<br>我们经常会有这样的需求，取出按照某个字段进行排序后的记录集，这就使用到了排序操作，用order by来实现，语法如下：</li>
+</ul>
+<pre><code><span class="keyword">select</span> * <span class="keyword">from</span> tablename [<span class="keyword">where</span> conditon] [<span class="keyword">order</span> <span class="keyword">by</span> field1 [<span class="keyword">desc</span>\<span class="keyword">asc</span>],field2[<span class="keyword">desc</span>\<span class="keyword">asc</span>]]
+</code></pre><p>其中desc和asc是排序顺序关键字，desc表示降序，asc为升序，默认为升序，order by后面可以有多个不同排序字段。<br>对于排序后的记录，如果希望只是显示部分，则使用<code>limit</code>关键字实现，语法如下：</p>
+<pre><code><span class="operator"><span class="keyword">select</span> ... [<span class="keyword">limit</span> offset_start,<span class="keyword">row_count</span>]</span>
+</code></pre><p>offset_start表示记录的起始偏移量，row_count表示显示的行数，默认起始变量为0，只需要填写行数即可。</p>
+<ul>
+<li>聚合<br>很多情况下，用户需要进行汇总操作，这时候就需要使用到sql的聚合操作。语法如下：</li>
+</ul>
+<pre><code><span class="operator"><span class="keyword">select</span> [field1,field2,...,fieldn] fun_name
+<span class="keyword">from</span> tablename [<span class="keyword">where</span> conditon]
+[<span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">field</span>,field2,...fieldn [<span class="keyword">with</span> <span class="keyword">rollup</span>]]
+[<span class="keyword">having</span> where_contition]</span>
+</code></pre><p>参数说明：<br><code>fun_name</code> 表示要进行的聚合操作，常用有sum、count、max、min。<br><code>group by</code> 表示要进行分类聚合的字段<br><code>with rollup</code> 是可选语法，表明是否对分类聚合后的结果进行再汇总。<br><code>having</code> 关键字表示对分类后的结果再进行条件过滤。<br><strong>注意：</strong>having和where的区别在于，having是对聚合后的结果进行条件过滤，而where是聚合前就对记录过滤。  </p>
+<ul>
+<li>表连接<br>当需要同时显示多个表中的字段的时候，就需要用表连接来实现这样的功能，从大类上分，表连接分为内连接和外连接，他们之间最大的区别在于，内连接仅选出表中互相匹配的记录，而外连接会选出其他不匹配的记录，最常用的是内连接。内连接基本语法如下：  </li>
+</ul>
+<pre><code>select field<span class="number">1</span>,field<span class="number">2</span> from tb<span class="label">name1</span>,tb<span class="label">name2</span> where tb<span class="label">name1</span>.field<span class="number">3</span> = tb<span class="label">name2</span>.field<span class="number">4</span>  
+</code></pre><p>外连接又分为左连接和右连接，具体定义如下：<br><code>左连接：</code>包含所有左边表中的记录甚至是右边表中没有和它匹配的记录。<br><code>右连接：</code>包含所有右边表中的记录甚至是左边表中没有和它匹配的记录。  </p>
+<p><strong>详细操作查看书上44页内容</strong></p>
+<ul>
+<li>子查询<br>当进行查询的时候，需要的条件是另一个select语句的结果，这个时候就用到子查询，用于子查询的关键字主要包括<code>in、join、=、!=、exists、not exists</code>等.如果子查询记录唯一，使用<code>=</code>代替<code>in</code>。  </li>
+</ul>
+<p><strong>详细操作查看书上44页内容</strong>  </p>
+<ul>
+<li>记录联合<br>将两个表的数据按照一定的条件查询出来后，将结果合并到一起显示，这个时候需要使用<code>union</code>和<code>union all</code>关键字来实现该功能，具体语法如下：</li>
+</ul>
+<pre><code><span class="keyword">select</span> * <span class="keyword">from</span> t1
+<span class="built_in">union</span>\<span class="built_in">union</span> <span class="built_in">all</span>
+<span class="keyword">select</span> * <span class="keyword">from</span> t2
+...
+<span class="keyword">select</span> * <span class="keyword">from</span> tn
+</code></pre><p><code>union</code>和<code>union all</code>的区别是<code>union all</code>是把结果直接合并到一起，而<code>union</code>是将结果<code>union all</code>后的结果distinct后的去重结果。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/24/MySQL数据库学习记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL数据库学习记录--DDL语句</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="MySQL数据库学习记录-DML语句" data-title="MySQL数据库学习记录--DML语句" data-url="http://AnaniCheng.github.io/2015/07/24/MySQL数据库学习记录-DML语句/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Mr.Cheng
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
