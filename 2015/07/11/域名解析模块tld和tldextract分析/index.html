@@ -6,18 +6,36 @@
   <title>域名解析模块tld和tldextract分析 | Mrcheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="&amp;lt;!-- toc --&amp;gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+
+tld模块链接
+tldextract模块链接
+tld和tldextract比较
+
+&amp;lt;!-- tocstop --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="域名解析模块tld和tldextract分析">
 <meta property="og:url" content="http://mrcheng0910.github.io/2015/07/11/域名解析模块tld和tldextract分析/index.html">
 <meta property="og:site_name" content="Mrcheng Blog">
 <meta property="og:description" content="&amp;lt;!-- toc --&amp;gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+
+tld模块链接
+tldextract模块链接
+tld和tldextract比较
+
+&amp;lt;!-- tocstop --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标">
 <meta property="og:updated_time" content="2015-12-02T02:31:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="域名解析模块tld和tldextract分析">
 <meta name="twitter:description" content="&amp;lt;!-- toc --&amp;gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+
+tld模块链接
+tldextract模块链接
+tld和tldextract比较
+
+&amp;lt;!-- tocstop --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标">
   
     <link rel="alternative" href="/atom.xml" title="Mrcheng Blog" type="application/atom+xml">
   
@@ -234,21 +252,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <!-- toc -->
-<p>&nbsp;&nbsp;&nbsp;&nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库<code>tld</code>和<code>tldextract</code>,python也有标准解析库<code>urlparse</code>,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。<br><a id="more"></a></p>
-<h2 id="tld模块链接">tld模块<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
+<ul>
+<li><a href="#tld&#x6A21;&#x5757;&#x94FE;&#x63A5;httpspypipythonorgpypitld">tld&#x6A21;&#x5757;<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">&#x94FE;&#x63A5;</a></a></li>
+<li><a href="#tldextract&#x6A21;&#x5757;&#x94FE;&#x63A5;httpspypipythonorgpypitldextract">tldextract&#x6A21;&#x5757;<a href="https://pypi.python.org/pypi/tldextract/" target="_blank" rel="external">&#x94FE;&#x63A5;</a></a></li>
+<li><a href="#tld&#x548C;tldextract&#x6BD4;&#x8F83;">tld&#x548C;tldextract&#x6BD4;&#x8F83;</a></li>
+</ul>
+<!-- tocstop -->
+<p>&#xA0;&#xA0;&#xA0;&#xA0;python&#x5BF9;&#x4E8E;&#x7F51;&#x7EDC;&#x64CD;&#x4F5C;&#x7279;&#x522B;&#x7684;&#x65B9;&#x4FBF;&#xFF0C;&#x5176;&#x4E2D;&#x5C24;&#x5176;&#x662F;&#x5BF9;&#x57DF;&#x540D;&#x7684;&#x5206;&#x89E3;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x6B21;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E24;&#x4E2A;&#x5E93;<code>tld</code>&#x548C;<code>tldextract</code>,python&#x4E5F;&#x6709;&#x6807;&#x51C6;&#x89E3;&#x6790;&#x5E93;<code>urlparse</code>,&#x5728;&#x8FD9;&#x91CC;&#x4E0D;&#x591A;&#x4ECB;&#x7ECD;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x53C2;&#x8003;python&#x7684;&#x6807;&#x51C6;&#x5E93;&#xFF0C;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x5206;&#x6790;&#x4E0E;&#x4ECB;&#x7ECD;&#x3002;<br><a id="more"></a></p>
+<h2 id="tld&#x6A21;&#x5757;&#x94FE;&#x63A5;">tld&#x6A21;&#x5757;<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">&#x94FE;&#x63A5;</a></h2><p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>from tld import get_tld  
-<span class="keyword">res</span> = get_tld(<span class="string">"http://www.baidu.com/,as_object=True)
+<span class="keyword">res</span> = get_tld(<span class="string">&quot;http://www.baidu.com/,as_object=True)
 </span><span class="keyword">print</span> <span class="keyword">res</span>            # www.baidu.<span class="keyword">com</span>
 <span class="keyword">print</span> <span class="keyword">res</span>.subdomain  # www
 <span class="keyword">print</span> <span class="keyword">res</span>.domain     # baidu
 <span class="keyword">print</span> <span class="keyword">res</span>.fuffix     # <span class="keyword">com</span>
 <span class="keyword">print</span> <span class="keyword">res</span>.tld        # baidu.<span class="keyword">com</span>
-</code></pre><h2 id="tldextract模块链接">tldextract模块<a href="https://pypi.python.org/pypi/tldextract/" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
+</code></pre><h2 id="tldextract&#x6A21;&#x5757;&#x94FE;&#x63A5;">tldextract&#x6A21;&#x5757;<a href="https://pypi.python.org/pypi/tldextract/" target="_blank" rel="external">&#x94FE;&#x63A5;</a></h2><p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>import tldextract
-ext = tldextract.<span class="function"><span class="title">extract</span><span class="params">(<span class="string">'http://forums.bbc.co.uk'</span>)</span></span>
+ext = tldextract.<span class="function"><span class="title">extract</span><span class="params">(<span class="string">&apos;http://forums.bbc.co.uk&apos;</span>)</span></span>
 print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</span>,ext.suffix
-</code></pre><p><strong>注意:</strong>，如果直接使用<code>tldextract.extract</code>,则程序运行第一次的时候，库会更新域名后缀列表，根据网络情况会很慢，可以取消更新，直接使用提取功能，详见<a href="https://github.com/john-kurkowski/tldextract#note-about-caching--advanced-usage" target="_blank" rel="external">网址</a>,英语较差的同学直接测试代码即可。</p>
-<h2 id="tld和tldextract比较">tld和tldextract比较</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;强烈建议使用tldextract，因为根据IANA机构发布最新消息，顶级域名后缀已经达到<strong>1000</strong>多个，域名的开放，使更多的后缀在更新中，而<code>tld</code>从前几年开始就已经不在更新，其后缀域名库已经远远达不到要求，因为项目需要，自己一直修改其标准库，每次都要更新，特别项目部署的时候，更是麻烦。<br>&nbsp;&nbsp;&nbsp;&nbsp;同时，<code>tldextract</code>实时更新，目前自己遇到的后缀基本都有，若没有只是稍微更新即可，所以强烈建议使用<code>tldextract</code>。</p>
+</code></pre><p><strong>&#x6CE8;&#x610F;:</strong>&#xFF0C;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>tldextract.extract</code>,&#x5219;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5E93;&#x4F1A;&#x66F4;&#x65B0;&#x57DF;&#x540D;&#x540E;&#x7F00;&#x5217;&#x8868;&#xFF0C;&#x6839;&#x636E;&#x7F51;&#x7EDC;&#x60C5;&#x51B5;&#x4F1A;&#x5F88;&#x6162;&#xFF0C;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x66F4;&#x65B0;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x63D0;&#x53D6;&#x529F;&#x80FD;&#xFF0C;&#x8BE6;&#x89C1;<a href="https://github.com/john-kurkowski/tldextract#note-about-caching--advanced-usage" target="_blank" rel="external">&#x7F51;&#x5740;</a>,&#x82F1;&#x8BED;&#x8F83;&#x5DEE;&#x7684;&#x540C;&#x5B66;&#x76F4;&#x63A5;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="tld&#x548C;tldextract&#x6BD4;&#x8F83;">tld&#x548C;tldextract&#x6BD4;&#x8F83;</h2><p>&#xA0;&#xA0;&#xA0;&#xA0;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;tldextract&#xFF0C;&#x56E0;&#x4E3A;&#x6839;&#x636E;IANA&#x673A;&#x6784;&#x53D1;&#x5E03;&#x6700;&#x65B0;&#x6D88;&#x606F;&#xFF0C;&#x9876;&#x7EA7;&#x57DF;&#x540D;&#x540E;&#x7F00;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;<strong>1000</strong>&#x591A;&#x4E2A;&#xFF0C;&#x57DF;&#x540D;&#x7684;&#x5F00;&#x653E;&#xFF0C;&#x4F7F;&#x66F4;&#x591A;&#x7684;&#x540E;&#x7F00;&#x5728;&#x66F4;&#x65B0;&#x4E2D;&#xFF0C;&#x800C;<code>tld</code>&#x4ECE;&#x524D;&#x51E0;&#x5E74;&#x5F00;&#x59CB;&#x5C31;&#x5DF2;&#x7ECF;&#x4E0D;&#x5728;&#x66F4;&#x65B0;&#xFF0C;&#x5176;&#x540E;&#x7F00;&#x57DF;&#x540D;&#x5E93;&#x5DF2;&#x7ECF;&#x8FDC;&#x8FDC;&#x8FBE;&#x4E0D;&#x5230;&#x8981;&#x6C42;&#xFF0C;&#x56E0;&#x4E3A;&#x9879;&#x76EE;&#x9700;&#x8981;&#xFF0C;&#x81EA;&#x5DF1;&#x4E00;&#x76F4;&#x4FEE;&#x6539;&#x5176;&#x6807;&#x51C6;&#x5E93;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x7279;&#x522B;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x66F4;&#x662F;&#x9EBB;&#x70E6;&#x3002;<br>&#xA0;&#xA0;&#xA0;&#xA0;&#x540C;&#x65F6;&#xFF0C;<code>tldextract</code>&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#xFF0C;&#x76EE;&#x524D;&#x81EA;&#x5DF1;&#x9047;&#x5230;&#x7684;&#x540E;&#x7F00;&#x57FA;&#x672C;&#x90FD;&#x6709;&#xFF0C;&#x82E5;&#x6CA1;&#x6709;&#x53EA;&#x662F;&#x7A0D;&#x5FAE;&#x66F4;&#x65B0;&#x5373;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>tldextract</code>&#x3002;</p>
 
       
     </div>
