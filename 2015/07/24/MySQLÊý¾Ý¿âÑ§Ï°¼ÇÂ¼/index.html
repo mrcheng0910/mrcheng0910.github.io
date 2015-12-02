@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>域名解析模块tld和tldextract分析 | AnaniCheng Blog</title>
+  <title>MySQL数据库学习记录--DDL语句 | AnaniCheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+  <meta name="description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，电子书下载链接，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="域名解析模块tld和tldextract分析">
-<meta property="og:url" content="http://AnaniCheng.github.io/2015/07/11/域名解析模块tld和tldextract分析/index.html">
+<meta property="og:title" content="MySQL数据库学习记录--DDL语句">
+<meta property="og:url" content="http://mrcheng0910.github.io/2015/07/24/MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼/index.html">
 <meta property="og:site_name" content="AnaniCheng Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
-<meta property="og:updated_time" content="2015-07-11T09:30:13.609Z">
+<meta property="og:description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，电子书下载链接，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。">
+<meta property="og:updated_time" content="2015-07-25T00:21:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="域名解析模块tld和tldextract分析">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+<meta name="twitter:title" content="MySQL数据库学习记录--DDL语句">
+<meta name="twitter:description" content="从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了《深入浅出mysql数据库开发、优化与管理维护 第二版》，电子书下载链接，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。">
   
     <link rel="alternative" href="/atom.xml" title="AnaniCheng Blog" type="application/atom+xml">
   
@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 20px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 20px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -189,11 +189,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-域名解析模块tld和tldextract分析" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/11/域名解析模块tld和tldextract分析/" class="article-date">
-  	<time datetime="2015-07-11T09:04:50.000Z" itemprop="datePublished">2015-07-11</time>
+      <a href="/2015/07/24/MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼/" class="article-date">
+  	<time datetime="2015-07-24T00:32:05.000Z" itemprop="datePublished">2015-07-24</time>
 </a>
     </div>
   
@@ -206,7 +206,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      域名解析模块tld和tldextract分析
+      MySQL数据库学习记录--DDL语句
     </h1>
   
 
@@ -215,7 +215,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tld/">tld</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tldextract/">tldextract</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名解析/">域名解析</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ddl/">ddl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql命令/">mysql命令</a></li></ul>
 	</div>
 
         
@@ -226,21 +226,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库<code>tld</code>和<code>tldextract</code>,python也有标准解析库<code>urlparse</code>,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。<br><a id="more"></a></p>
-<h2 id="tld模块链接">tld模块<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
-<pre><code>from tld import get_tld  
-<span class="keyword">res</span> = get_tld(<span class="string">"http://www.baidu.com/,as_object=True)
-</span><span class="keyword">print</span> <span class="keyword">res</span>            # www.baidu.<span class="keyword">com</span>
-<span class="keyword">print</span> <span class="keyword">res</span>.subdomain  # www
-<span class="keyword">print</span> <span class="keyword">res</span>.domain     # baidu
-<span class="keyword">print</span> <span class="keyword">res</span>.fuffix     # <span class="keyword">com</span>
-<span class="keyword">print</span> <span class="keyword">res</span>.tld        # baidu.<span class="keyword">com</span>
-</code></pre><h2 id="tldextract模块链接">tldextract模块<a href="https://pypi.python.org/pypi/tldextract/" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
-<pre><code>import tldextract
-ext = tldextract.<span class="function"><span class="title">extract</span><span class="params">(<span class="string">'http://forums.bbc.co.uk'</span>)</span></span>
-print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</span>,ext.suffix
-</code></pre><p><strong>注意:</strong>，如果直接使用<code>tldextract.extract</code>,则程序运行第一次的时候，库会更新域名后缀列表，根据网络情况会很慢，可以取消更新，直接使用提取功能，详见<a href="https://github.com/john-kurkowski/tldextract#note-about-caching--advanced-usage" target="_blank" rel="external">网址</a>,英语较差的同学直接测试代码即可。</p>
-<h2 id="tld和tldextract比较">tld和tldextract比较</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;强烈建议使用tldextract，因为根据IANA机构发布最新消息，顶级域名后缀已经达到<strong>1000</strong>多个，域名的开放，使更多的后缀在更新中，而<code>tld</code>从前几年开始就已经不在更新，其后缀域名库已经远远达不到要求，因为项目需要，自己一直修改其标准库，每次都要更新，特别项目部署的时候，更是麻烦。<br>&nbsp;&nbsp;&nbsp;&nbsp;同时，<code>tldextract</code>实时更新，目前自己遇到的后缀基本都有，若没有只是稍微更新即可，所以强烈建议使用<code>tldextract</code>。</p>
+        <p>从接触mysql开始就一直使用navicat for mysql来进行数据库的操作，确实很方便，但是有一些更高的功能却无法使用，以及对数据库不能深刻理解，所以买了<strong>《深入浅出mysql数据库开发、优化与管理维护 第二版》</strong>，<a href="http://download.csdn.net/detail/for_cyn777/8570287#comment" target="_blank" rel="external">电子书下载链接</a>，通过记录学习，加深对mysql的理解。同时也是自己的项目需求要达到千万级别的数据的存储以及操作。<br><a id="more"></a></p>
+<h3 id="1-_登录">1. 登录</h3><p>语法:<code>mysql -uroot -p</code>,然后输入正确的密码，即可进入到数据库中，<code>-u</code>后面是连接数据库的用户名，默认是<code>root</code>，另外命令的结束符，用<code>;</code>或者<code>\g</code>结束。  </p>
+<h3 id="2-_创建数据库">2. 创建数据库</h3><p>语法：<code>create database dbname</code>，dbname为创建的数据库的名称。</p>
+<h3 id="3-_查看系统中已存在的数据库">3. 查看系统中已存在的数据库</h3><p>语法:<code>show databases</code>，就会列出所有系统中所有的数据库。</p>
+<h3 id="4-_选择操作的数据库">4. 选择操作的数据库</h3><p>语法:<code>use dbname</code>，dbname为想要操作的数据库名称。 </p>
+<h3 id="5-_查看某数据库中包含的所有表">5. 查看某数据库中包含的所有表</h3><p>语法:<code>show tables</code>，会显示出该数据库中所有的表，该命令操作必须是在确定的数据库中才可以。</p>
+<h3 id="6-_删除数据库">6. 删除数据库</h3><p>语法：<code>drop database dbname</code>，dbname为要删除的数据库名称</p>
+<h3 id="7-_创建表">7. 创建表</h3><p>语法：  </p>
+<pre><code><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> tablename(
+col_name1 col_type1 <span class="keyword">constraints</span>,
+col_name1 col_type1 <span class="keyword">constraints</span>)</span>
+</code></pre><p>col_name为列的名字，col_type为数据类型，constraints为这个列的约束条件。</p>
+<h3 id="8-_查看表的定义">8. 查看表的定义</h3><p>语法：<code>desc tablename</code>,tablename即为所要查看的表的名称。<br>但是上述显示的信息还不够全面，可以使用以下命令来查看表的更多定义信息。<br>命令：<code>show create table tbname \g</code>,其中tbname为表名称，\g是用来使得记录能够按照字段竖向排列，以便更好显示内容较长的记录。这个命令可以显示出表的engine(存储引擎)和charset(字符集)等信息。</p>
+<h3 id="9-_删除表">9. 删除表</h3><p>语法：<code>drop table tbname</code>，tbname为要删除的表的名称</p>
+<h3 id="10-_修改表">10. 修改表</h3><p><strong>备注：</strong><code>first|after column_name</code>是修改字段在表中的位置。  </p>
+<ul>
+<li><p>修改表的类型<br>语法：<code>alter table tablename modify[column] column_definition[first|after clo_name]</code></p>
+</li>
+<li><p>增加表字段<br>语法：<code>alter table tablename add[column] column_definition[first|after col_name]</code></p>
+</li>
+<li><p>删除表字段<br>语法：<code>alter table tablename drop[column] col_name</code></p>
+</li>
+<li><p>字段改名<br>语法：<code>alter table tablename change[column] old_col_name column_definiton [first|after col_name]</code><br>例如：<code>alter table tbname change age age1 int(4)</code>,该例子就是将字段age名称改为age1，且字段类型改为int(4)  </p>
+</li>
+<li>修改字段排序顺序<br>前面介绍的字段增加和修改方法中，都有一个可选项first|after column_name，修改字段在表中位置。</li>
+<li>更改表名<br>语法：<code>alter table tablename rename [to] new_tablename</code></li>
+</ul>
 
       
     </div>
@@ -250,18 +262,18 @@ print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</s
     
 <nav id="article-nav">
   
-    <a href="/2015/07/24/MySQL数据库学习记录/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/24/MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼-DMLÓï¾ä/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          MySQL数据库学习记录--DDL语句
+          MySQL数据库学习记录--DML语句
         
       </div>
     </a>
   
   
-    <a href="/2015/07/10/MarkDown语法记录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MarkDown语法记录</div>
+    <a href="/2015/07/11/ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">域名解析模块tld和tldextract分析</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -290,7 +302,7 @@ print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</s
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="域名解析模块tld和tldextract分析" data-title="域名解析模块tld和tldextract分析" data-url="http://AnaniCheng.github.io/2015/07/11/域名解析模块tld和tldextract分析/"></div>
+	<div class="ds-thread" data-thread-key="MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼" data-title="MySQL数据库学习记录--DDL语句" data-url="http://mrcheng0910.github.io/2015/07/24/MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
