@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>域名解析模块tld和tldextract分析 | AnaniCheng Blog</title>
+  <title>域名解析模块tld和tldextract分析 | Mrcheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+  <meta name="description" content="&amp;lt;!-- toc --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="域名解析模块tld和tldextract分析">
-<meta property="og:url" content="http://mrcheng0910.github.io/2015/07/11/ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö/index.html">
-<meta property="og:site_name" content="AnaniCheng Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
-<meta property="og:updated_time" content="2015-07-11T09:30:14.000Z">
+<meta property="og:url" content="http://mrcheng0910.github.io/2015/07/11/域名解析模块tld和tldextract分析/index.html">
+<meta property="og:site_name" content="Mrcheng Blog">
+<meta property="og:description" content="&amp;lt;!-- toc --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+<meta property="og:updated_time" content="2015-12-02T02:31:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="域名解析模块tld和tldextract分析">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
+<meta name="twitter:description" content="&amp;lt;!-- toc --&amp;gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库tld和tldextract,python也有标准解析库urlparse,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。">
   
-    <link rel="alternative" href="/atom.xml" title="AnaniCheng Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Mrcheng Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="http://7xk5in.com1.z0.glb.clouddn.com/53a2977256e8a087.jpg!200x200.jpg">
@@ -115,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 20px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/感触/" style="font-size: 10px;">感触</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/ddl/" style="font-size: 10px;">ddl</a> <a href="/tags/dml/" style="font-size: 10px;">dml</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/mysql命令/" style="font-size: 10px;">mysql命令</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/tld/" style="font-size: 10px;">tld</a> <a href="/tags/tldextract/" style="font-size: 10px;">tldextract</a> <a href="/tags/域名解析/" style="font-size: 10px;">域名解析</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
 					</div>
 				</section>
 				
@@ -189,10 +192,10 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-域名解析模块tld和tldextract分析" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/11/ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö/" class="article-date">
+      <a href="/2015/07/11/域名解析模块tld和tldextract分析/" class="article-date">
   	<time datetime="2015-07-11T09:04:50.000Z" itemprop="datePublished">2015-07-11</time>
 </a>
     </div>
@@ -219,6 +222,10 @@
 	</div>
 
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/域名/">域名</a><a class="article-category-link" href="/categories/域名/域名解析/">域名解析</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -226,7 +233,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库<code>tld</code>和<code>tldextract</code>,python也有标准解析库<code>urlparse</code>,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。<br><a id="more"></a></p>
+        <!-- toc -->
+<p>&nbsp;&nbsp;&nbsp;&nbsp;python对于网络操作特别的方便，其中尤其是对域名的分解操作，这次主要介绍两个库<code>tld</code>和<code>tldextract</code>,python也有标准解析库<code>urlparse</code>,在这里不多介绍，有兴趣的同学可以参考python的标准库，有详细的分析与介绍。<br><a id="more"></a></p>
 <h2 id="tld模块链接">tld模块<a href="https://pypi.python.org/pypi/tld" target="_blank" rel="external">链接</a></h2><p>代码如下：</p>
 <pre><code>from tld import get_tld  
 <span class="keyword">res</span> = get_tld(<span class="string">"http://www.baidu.com/,as_object=True)
@@ -250,17 +258,17 @@ print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</s
     
 <nav id="article-nav">
   
-    <a href="/2015/07/24/MySQLÊý¾Ý¿âÑ§Ï°¼ÇÂ¼/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/24/MySQL数据库学习记录-DML语句/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          MySQL数据库学习记录--DDL语句
+          MySQL数据库学习记录--DML语句
         
       </div>
     </a>
   
   
-    <a href="/2015/07/10/MarkDownÓï·¨¼ÇÂ¼/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/10/MarkDown语法记录/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">MarkDown语法记录</div>
       <strong class="article-nav-caption">></strong>
     </a>
@@ -290,7 +298,7 @@ print ext<span class="class">.subdomain</span>,ext<span class="class">.domain</s
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö" data-title="域名解析模块tld和tldextract分析" data-url="http://mrcheng0910.github.io/2015/07/11/ÓòÃû½âÎöÄ£¿étldºÍtldextract·ÖÎö/"></div>
+	<div class="ds-thread" data-thread-key="域名解析模块tld和tldextract分析" data-title="域名解析模块tld和tldextract分析" data-url="http://mrcheng0910.github.io/2015/07/11/域名解析模块tld和tldextract分析/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
