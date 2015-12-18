@@ -5,16 +5,16 @@
   
   <title>MySQL语句记录 | Mrcheng Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x57DF;&amp;#x540D;&amp;#x4ECE;&amp;#x8FD1;&amp;#x5343;&amp;#x4E07;&amp;#x7EA7;&amp;#x522B;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x4E2D;&amp;#xFF0C;&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x51FA;2000&amp;#x4E2A;&amp;#x5">
+  <meta name="description" content="随机提取域名从近千万级别的数据库中，随机提取出2000个域名，无论id是否连续，这是从国外网站上找到的方法，目前是自己测试过效率最高的。1SELECT domain FROM domain_whois_A WHERE flag =&apos;-6&apos; AND RAND()&amp;lt;(SELECT ((2000/COUNT(*))*10) FROM domain_whois_A  ) ORDER BY RAND(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL语句记录">
 <meta property="og:url" content="http://mrcheng0910.github.io/2015/12/18/MySQL语句记录/index.html">
 <meta property="og:site_name" content="Mrcheng Blog">
-<meta property="og:description" content="&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x57DF;&amp;#x540D;&amp;#x4ECE;&amp;#x8FD1;&amp;#x5343;&amp;#x4E07;&amp;#x7EA7;&amp;#x522B;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x4E2D;&amp;#xFF0C;&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x51FA;2000&amp;#x4E2A;&amp;#x5">
-<meta property="og:updated_time" content="2015-12-18T01:06:00.000Z">
+<meta property="og:description" content="随机提取域名从近千万级别的数据库中，随机提取出2000个域名，无论id是否连续，这是从国外网站上找到的方法，目前是自己测试过效率最高的。1SELECT domain FROM domain_whois_A WHERE flag =&apos;-6&apos; AND RAND()&amp;lt;(SELECT ((2000/COUNT(*))*10) FROM domain_whois_A  ) ORDER BY RAND(">
+<meta property="og:updated_time" content="2015-12-18T01:07:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL语句记录">
-<meta name="twitter:description" content="&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x57DF;&amp;#x540D;&amp;#x4ECE;&amp;#x8FD1;&amp;#x5343;&amp;#x4E07;&amp;#x7EA7;&amp;#x522B;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x4E2D;&amp;#xFF0C;&amp;#x968F;&amp;#x673A;&amp;#x63D0;&amp;#x53D6;&amp;#x51FA;2000&amp;#x4E2A;&amp;#x5">
+<meta name="twitter:description" content="随机提取域名从近千万级别的数据库中，随机提取出2000个域名，无论id是否连续，这是从国外网站上找到的方法，目前是自己测试过效率最高的。1SELECT domain FROM domain_whois_A WHERE flag =&apos;-6&apos; AND RAND()&amp;lt;(SELECT ((2000/COUNT(*))*10) FROM domain_whois_A  ) ORDER BY RAND(">
   
   
     <link rel="icon" href="http://7xk5in.com1.z0.glb.clouddn.com/53a2977256e8a087.jpg!200x200.jpg">
@@ -232,7 +232,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="&#x968F;&#x673A;&#x63D0;&#x53D6;&#x57DF;&#x540D;">&#x968F;&#x673A;&#x63D0;&#x53D6;&#x57DF;&#x540D;</h3><p>&#x4ECE;&#x8FD1;&#x5343;&#x4E07;&#x7EA7;&#x522B;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x968F;&#x673A;&#x63D0;&#x53D6;&#x51FA;<code>2000</code>&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x65E0;&#x8BBA;id&#x662F;&#x5426;&#x8FDE;&#x7EED;&#xFF0C;&#x8FD9;&#x662F;&#x4ECE;&#x56FD;&#x5916;&#x7F51;&#x7AD9;&#x4E0A;&#x627E;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x81EA;&#x5DF1;&#x6D4B;&#x8BD5;&#x8FC7;&#x6548;&#x7387;&#x6700;&#x9AD8;&#x7684;&#x3002;<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT domain FROM domain_whois_A WHERE flag =&apos;-6&apos; AND RAND()&lt;(SELECT ((2000/COUNT(*))*10) FROM domain_whois_A  ) ORDER BY RAND() LIMIT 2000;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="&#x968F;&#x673A;&#x63D0;&#x53D6;&#x57DF;&#x540D;">&#x968F;&#x673A;&#x63D0;&#x53D6;&#x57DF;&#x540D;</h3><p>&#x4ECE;&#x8FD1;&#x5343;&#x4E07;&#x7EA7;&#x522B;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x968F;&#x673A;&#x63D0;&#x53D6;&#x51FA;<code>2000</code>&#x4E2A;&#x57DF;&#x540D;&#xFF0C;&#x65E0;&#x8BBA;id&#x662F;&#x5426;&#x8FDE;&#x7EED;&#xFF0C;&#x8FD9;&#x662F;&#x4ECE;&#x56FD;&#x5916;&#x7F51;&#x7AD9;&#x4E0A;&#x627E;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x81EA;&#x5DF1;&#x6D4B;&#x8BD5;&#x8FC7;&#x6548;&#x7387;&#x6700;&#x9AD8;&#x7684;&#x3002;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SELECT</span> <span class="keyword">domain</span> <span class="keyword">FROM</span> domain_whois_A <span class="keyword">WHERE</span> flag =<span class="string">&apos;-6&apos;</span> <span class="keyword">AND</span> <span class="keyword">RAND</span>()&lt;(<span class="keyword">SELECT</span> ((<span class="number">2000</span>/<span class="keyword">COUNT</span>(*))*<span class="number">10</span>) <span class="keyword">FROM</span> domain_whois_A  ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">RAND</span>() <span class="keyword">LIMIT</span> <span class="number">2000</span>;</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="&#x6BD4;&#x8F83;&#x6700;&#x8FD1;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x6539;">&#x6BD4;&#x8F83;&#x6700;&#x8FD1;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x6539;</h3><p>&#x6BD4;&#x8F83;&#x6700;&#x8FD1;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;&#x63A2;&#x6D4B;&#x7684;&#x57DF;&#x540D;&#x6570;&#x91CF;&#x589E;&#x957F;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x65B0;&#x7684;tld&#x3002;</p>
 <ol>
 <li><p>&#x5224;&#x65AD;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x65B0;&#x7684;&#x3002;  </p>
